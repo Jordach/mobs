@@ -415,7 +415,8 @@ mobs:register_arrow("mobs:fireball", {
 					if minetest.registered_nodes[n].groups.flammable or math.random(1, 100) <= 30 then
 						minetest.env:set_node(p, {name="fire:basic_flame"})
 					else
-						minetest.env:remove_node(p)
+						--no removing of nodes (safe for large public servers who build under
+						--ground
 					end
 				end
 			end
@@ -430,7 +431,7 @@ mobs:register_arrow("mobs:fireball", {
 					if minetest.registered_nodes[n].groups.flammable or math.random(1, 100) <= 30 then
 						minetest.env:set_node(p, {name="fire:basic_flame"})
 					else
-						minetest.env:remove_node(p)
+						--see line 418, 419
 					end
 				end
 			end
